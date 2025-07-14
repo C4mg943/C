@@ -11,14 +11,13 @@ void error(const char *msg){
 }
 
 void llenar(int *arr, int tam){
-    for(int i = 0; i<=tam; i++){
+    for(int i = 0; i<tam; i++){
         scanf("%d",&arr[i]);
     }
 }
 
 void solucion(int arr[],int tam, char gender){
     int aux = 0;
-    int auxg = 0;
     for (int i = 0; i < tam; i++)
     {
         if(gender == 'b'){
@@ -27,15 +26,11 @@ void solucion(int arr[],int tam, char gender){
             }
         }else{
             if((i%2)!=0){
-                auxg += arr[i];
+                aux += arr[i];
             }            
         }
     }
-    if(gender == 'b'){
-        printf("%d",aux);
-    }else{
-        printf("%d",auxg);
-    }
+    printf("%d",aux);
 }
 
 int main(){
@@ -44,7 +39,7 @@ int main(){
     int arr[flag];
     llenar(arr,flag);
     char gender; 
-    scanf("%c",&gender);
+    scanf(" %c", &gender);
 
     if(gender != 'b' && gender != 'g'){
         error("Genero incorrecto ('g' o 'b')");
